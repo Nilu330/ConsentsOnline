@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.LaunchBrowserTest"/>
+      <class name="nz.govt.mdc.ConsentsOnline.ValidLoginTest"/>
+      <class name="nz.govt.mdc.ConsentsOnline.HomePageTest"/>
+      <class name="nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.ValidLoginTest">
+        <methods>
+          <include name="Valid_Login"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.ValidLoginTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest">
+        <methods>
+          <include name="application_step_one"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.HomePageTest">
+        <methods>
+          <include name="new_application"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.HomePageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
