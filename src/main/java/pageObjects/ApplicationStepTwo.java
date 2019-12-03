@@ -18,7 +18,7 @@ public class ApplicationStepTwo
 	public ApplicationStepTwo(WebDriver driver) 
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver,this);
 	}
 	
 	public void step2() {

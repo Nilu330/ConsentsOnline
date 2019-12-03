@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ApplicationStepFour {
 	WebDriver driver;
 	
-	@FindBy(how=How.ID,using=("btnSaveAffectedParties"))
+	@FindBy(how=How.XPATH,using=("//input[@id=\"btnSaveAffectedParties\"]"))
 	WebElement save_step4;
 	
 	public ApplicationStepFour(WebDriver driver) {

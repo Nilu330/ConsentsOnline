@@ -1,31 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test">
+  <listeners>
+    <listener class-name="nz.govt.mdc.ConsentsOnline.Listeners"/>
+    <listener class-name="nz.govt.mdc.ConsentsOnline.ExtentReporterNG"/>
+  </listeners>
+  <test name="Validate Login">
     <classes>
-      <class name="nz.govt.mdc.ConsentsOnline.LaunchBrowserTest"/>
-      <class name="nz.govt.mdc.ConsentsOnline.ValidLoginTest"/>
-      <class name="nz.govt.mdc.ConsentsOnline.HomePageTest"/>
-      <class name="nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest"/>
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest"/>
     </classes>
-  </test> <!-- Test -->
-  <test name="Test(failed)">
+  </test> <!-- Validate Login -->
+  <test name="Validate Subdivision consent application">
     <classes>
-      <class name="nz.govt.mdc.ConsentsOnline.ValidLoginTest">
-        <methods>
-          <include name="Valid_Login"/>
-        </methods>
-      </class> <!-- nz.govt.mdc.ConsentsOnline.ValidLoginTest -->
-      <class name="nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest">
-        <methods>
-          <include name="application_step_one"/>
-        </methods>
-      </class> <!-- nz.govt.mdc.ConsentsOnline.ApplicationStepOneTest -->
-      <class name="nz.govt.mdc.ConsentsOnline.HomePageTest">
-        <methods>
-          <include name="new_application"/>
-        </methods>
-      </class> <!-- nz.govt.mdc.ConsentsOnline.HomePageTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest"/>
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Validate Subdivision consent application -->
+  <test name="Validate Land use consent application">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest"/>
+    </classes>
+  </test> <!-- Validate Land use consent application -->
+  <test name="Validate Subdivision consent application(failed)">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="application_step_eight"/>
+          <include name="application_step_six"/>
+          <include name="application_step_seven"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LoginTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest -->
+    </classes>
+  </test> <!-- Validate Subdivision consent application(failed) -->
+  <test name="Validate Land use consent application(failed)">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="application_step_eight"/>
+          <include name="teardown"/>
+          <include name="application_step_six"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LoginTest -->
+    </classes>
+  </test> <!-- Validate Land use consent application(failed) -->
 </suite> <!-- Failed suite [Suite] -->

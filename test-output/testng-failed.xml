@@ -1,26 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="nz.govt.mdc.ConsentsOnline.Listeners"/>
+    <listener class-name="nz.govt.mdc.ConsentsOnline.ExtentReporterNG"/>
+  </listeners>
+  <test name="Validate Login">
     <classes>
-      <class name="nz.govt.mdc.ConsentsOnline.NewApplicationTest"/>
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest"/>
     </classes>
-  </test> <!-- Default test -->
-  <test name="Default test(failed)">
+  </test> <!-- Validate Login -->
+  <test name="Validate Subdivision consent application">
     <classes>
-      <class name="nz.govt.mdc.ConsentsOnline.NewApplicationTest">
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest"/>
+    </classes>
+  </test> <!-- Validate Subdivision consent application -->
+  <test name="Validate Land use consent application">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest"/>
+    </classes>
+  </test> <!-- Validate Land use consent application -->
+  <test name="Validate Subdivision consent application(failed)">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest">
         <methods>
-          <include name="application_step_five"/>
-          <include name="application_step_six"/>
-          <include name="application_step_two"/>
           <include name="Launch_Browser"/>
           <include name="application_step_eight"/>
-          <include name="application_step_three"/>
-          <include name="new_application"/>
-          <include name="application_step_four"/>
-          <include name="application_step_one"/>
+          <include name="application_step_six"/>
+          <include name="application_step_seven"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- nz.govt.mdc.ConsentsOnline.NewApplicationTest -->
+      </class> <!-- nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LoginTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Validate Subdivision consent application(failed) -->
+  <test name="Validate Land use consent application(failed)">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest">
+        <methods>
+          <include name="Launch_Browser"/>
+          <include name="application_step_eight"/>
+          <include name="teardown"/>
+          <include name="application_step_six"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest -->
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="Launch_Browser"/>
+        </methods>
+      </class> <!-- nz.govt.mdc.ConsentsOnline.LoginTest -->
+    </classes>
+  </test> <!-- Validate Land use consent application(failed) -->
+</suite> <!-- Failed suite [Suite] -->

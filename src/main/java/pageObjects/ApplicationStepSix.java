@@ -10,7 +10,7 @@ public class ApplicationStepSix {
 	WebDriver driver;
 	
 	
-	@FindBy(how=How.ID,using=("IsEnvironmentalEffectsHasBeenIncluded"))
+	@FindBy(how=How.XPATH,using=("//input[@id=\"IsEnvironmentalEffectsHasBeenIncluded\"]"))
 	WebElement environmental_effects_assessment;
 	@FindBy(how=How.ID,using=("btnSubmit"))
 	WebElement save_step6;

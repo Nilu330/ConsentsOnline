@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.Test;
 
 public class ApplicationStepOne {
 	WebDriver driver;
@@ -29,6 +28,9 @@ public class ApplicationStepOne {
 	WebElement save_step1;
 	@FindBy(how=How.XPATH,using=("//span[@class=\"councilsAddress\"]"))
 	WebElement council_address ;
+	@FindBy(how=How.XPATH,using=("//div[contains(text(),\"Application And Council Details\" )]"))
+	WebElement step1_heading ;
+	
 	
 	
 	
@@ -82,5 +84,9 @@ public class ApplicationStepOne {
 		return c_address;
 	}
 	
-
+	public String get_step1_heading()
+	{
+		String s1h=step1_heading.getText();
+		return s1h;
+	}
 }

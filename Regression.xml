@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+     
+        
+         <listener class-name="nz.govt.mdc.ConsentsOnline.Listeners"/>
+         <listener class-name="nz.govt.mdc.ConsentsOnline.ExtentReporterNG"/>
+         
+
+ </listeners>
+
+  <test name="Validate Login">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.LoginTest"/>
+    </classes>
+  </test>  
+  <test name="Validate Subdivision consent application">
+    <classes>    
+      <class name="nz.govt.mdc.ConsentsOnline.SubdivisionConsentApplicationTest"/>
+    </classes>
+  </test>
+  <test name="Validate Land use consent application">
+    <classes>
+      <class name="nz.govt.mdc.ConsentsOnline.LandUseConsentApplicationTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

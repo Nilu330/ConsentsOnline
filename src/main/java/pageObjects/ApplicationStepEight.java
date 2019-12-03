@@ -15,11 +15,16 @@ public class ApplicationStepEight {
 	WebElement name;
 	@FindBy(how=How.ID,using=("SignatureDate"))
 	WebElement calender;
+	@FindBy(how=How.XPATH,using=("(//th[contains(@colspan,'5')])[1]"))
+	WebElement month_year;	
+	@FindBy(how=How.XPATH,using=("//th[contains(@class,'next')])[1]"))
+	WebElement month_next;	
 	@FindBy(how=How.CSS,using=(".day"))
-	List<WebElement> day;
-	@FindBy(how=How.ID,using=("SubmitToCouncil"))
+	List<WebElement> day_array;
+	@FindBy(how=How.XPATH,using=("//button[@id=\"SubmitToCouncil\"]"))
 	WebElement submit;
-
+	
+	
 
 
 public ApplicationStepEight(WebDriver driver) {
@@ -31,14 +36,28 @@ public void applicant_name(String n) {
 	name.sendKeys(n);
 }
 
-public void date(String dd) {
+public void get_date(String date)
+{
 	calender.click();
 	
-	int count=day.size();
+	String dateParts[] = date.split(" ");
+	String day  = dateParts[0];
+	/*String month  = dateParts[1];
+	  String year = dateParts[2];
+	
+	while(!month_year.getText().contains(month+" "+year))
+	{
+		month_next.click();
+	}*/
+
+	
+	
+	int count=day_array.size();
+	
 	for(int i=0;i<count;i++) {
-		String d=day.get(i).getText();
-		if(d.equals(dd)) {
-			day.get(i).click();
+		String d=day_array.get(i).getText();
+		if(d.equals(day)) {
+			day_array.get(i).click();
 	
 		}		
 	}
@@ -46,7 +65,7 @@ public void date(String dd) {
 	
 }
 
-public void step8() {
+public void submit_application() {
 	submit.click();
 }
 
